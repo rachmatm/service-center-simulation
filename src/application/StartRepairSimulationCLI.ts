@@ -41,13 +41,16 @@ export class StartRepairSimulationCLI {
             const customer = customers[customerIndex];
             customerIndex++;
 
-            await this._repairProcess.execute(
+            console.log(`>> ${technician.name} is repairing ${customer.name}'s phone Customer phone is ${customer.phoneSeries.value} series <<`);
+            await this._repairProcess.start(
                 this._serviceCenter,
                 customer,
                 technician
             );
-
+            console.log(`\t\t  REPAIRING DONE: ${technician.name} FIXED ${customer.name}'s phone.`);
+            
             // Recursively process next customer
+            console.log(`${technician.name} available, call another customer.`);
             return processCustomer(technician);
         }
 

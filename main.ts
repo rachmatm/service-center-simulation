@@ -1,13 +1,13 @@
 // APPLICATION STARTUP
 
 import { InMemoryCustomerRepository } from "./src/adapters/InMemoryCustomerRepository.js";
-import { SimulationRepairProcess } from "./src/adapters/SimulationRepairProcess.js";
+import { RepairProcessSimulation } from "./src/adapters/RepairProcessSimulation.js";
 import { StartRepairSimulationCLI } from "./src/application/StartRepairSimulationCLI.js";
 import { ServiceCenter } from "./src/domain/ServiceCenter.js";
 import { Technician } from "./src/domain/Technician.js";
 
 const customerRepository = new InMemoryCustomerRepository;
-const repairProcess = new SimulationRepairProcess;
+const repairProcess = new RepairProcessSimulation;
 
 async function main(){
     // Create Domain Entities - Customers

@@ -3,7 +3,13 @@ import { ServiceCenter } from "../domain/ServiceCenter.js";
 import { Technician } from "../domain/Technician.js";
 
 export interface RepairProcess {
-    execute(
+    start(
+        serviceCenter: ServiceCenter,
+        customer: Customer,
+        technician: Technician
+    ): Promise<void>;
+
+    complete(
         serviceCenter: ServiceCenter,
         customer: Customer,
         technician: Technician
