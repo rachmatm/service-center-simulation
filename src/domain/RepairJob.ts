@@ -6,15 +6,15 @@ import { Customer } from "./Customer.js";
 import { Technician } from "./Technician.js";
 
 export class RepairJob {
+    private readonly _id: string = crypto.randomUUID();
     private readonly _customer: Customer;
     private readonly _technician: Technician;
-    private readonly _startTime: Date;
+    private _startTime?: Date;
     private _endTime?: Date;
 
     constructor(customer: Customer, technician: Technician) {
         this._customer = customer;
         this._technician = technician;
-        this._startTime = new Date();
     }
 
     get customer(): Customer {
@@ -31,6 +31,13 @@ export class RepairJob {
     
     get endTime(): Date | undefined {
         return this._endTime;
+    }
+
+    startRepair(): void {
+        if(this._startTime) {
+            throw new Error("Repair job has already started.");
+        }
+        this._startTime = new Date();
     }
 
     completeRepair(): void {

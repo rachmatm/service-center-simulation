@@ -9,9 +9,5 @@ export interface RepairProcess {
         technician: Technician
     ): Promise<void>;
 
-    complete(
-        serviceCenter: ServiceCenter,
-        customer: Customer,
-        technician: Technician
-    ): Promise<void>;
+    complete(repairJobId: string): Promise<void>;
 }

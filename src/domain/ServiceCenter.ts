@@ -47,6 +47,17 @@ export class ServiceCenter {
         return this._repairHistory;
     }
 
+    get repairHistoryArray(): RepairJob[] {
+        const allJobs: RepairJob[] = [];
+        this._repairHistory.forEach(jobs => {
+            allJobs.push(...jobs);
+        });
+
+        // Sort by startTime (ascending - earliest first)
+        const allJobsByStartTimeASC = allJobs.sort((a, b) => a.startTime.getTime() - b.startTime.getTime());
+        return allJobsByStartTimeASC;
+    }
+
     recordRepairJob(repairJob: RepairJob): void {
         const techName = repairJob.technician.name;
         const technicianJobs = this._repairHistory.get(techName);

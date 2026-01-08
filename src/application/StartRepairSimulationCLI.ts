@@ -57,6 +57,17 @@ export class StartRepairSimulationCLI {
         // Start concurrent processing for all technicians
         await Promise.all(
             this._serviceCenter.technicians.map(technician => processCustomer(technician))
-        );  
+        );
+        
+        console.log('\nAll customers have been processed. Summary of repair jobs:');
+        console.table(
+            this._serviceCenter.repairHistoryArray.map(job => ({
+                customerName: job.customer.name,
+                technicianName: job.technician.name,
+                phoneSeries: job.customer.phoneSeries.value,
+                startTime: job.startTime.toTimeString(),
+                durationSeconds: Math.round((job.endTime.getTime() - job.startTime.getTime()) / 1000)
+            }))
+        );
     };
 }
