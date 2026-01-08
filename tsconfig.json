@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "nodenext", 
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "moduleResolution": "nodenext",
+    "sourceMap": true,
+    "target": "es2015",
+    "outDir": "./dist",
+    "rootDir": "./",
+    "declaration": true
+  },
+  "include": ["src/**/*", "main.ts"],
+  "exclude": ["node_modules", "__tests__", "dist"]
+}
