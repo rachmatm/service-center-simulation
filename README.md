@@ -1,7 +1,7 @@
-> I use Hexagonal Architecture to build a well-structured, maintainable, and flexible backend. Here is an example implementation.
+# A Service Center Queue Management System  CLI
 
+> Submission by **Rachmat Maulana Saleh** built using Hexagonal Architecture for improved maintainability.
 
-# Tenderboard Case Study Test 
 ### Overview
 Phonetic is a new startup company. They create and sell a revolutionary smartphone, a modular smartphone. Today, they have three series of phones. They are Jaguar, Leopard, and Lion. Phonetic ambition is to become the first leader in the smartphone industry. To achieve this, they are committed to providing the best after-sale experience in the world. They offer a one-day reparation service for all their smartphone lineups (it's possible because it's a modular phone). To make this happen, they hired Dalton and Wapol as technicians in their first service center at Long Ring Long Land Street.
 
